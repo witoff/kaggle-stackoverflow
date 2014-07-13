@@ -19,14 +19,20 @@ Data can be downloaded kaggle from [here](https://www.kaggle.com/c/predict-close
 
 ### Example Data
 
-Source data looks like this:
+Source CSV data looks like this:
 ```csv
-PostId,PostCreationDate,OwnerUserId,OwnerCreationDate,ReputationAtPostCreation,OwnerUndeletedAnswerCountAtPostTime,Title,BodyMarkdown,Tag1,Tag2,Tag3,Tag4,Tag5,PostClosedDate,OpenStatus
-4,07/31/2008 21:42:52,8,07/31/2008 21:33:24,1,0,Decimal vs Double?,"I'm new to C#, and I want to use a trackbar for the forms opacity This is my code.........",c#,vb.net,timer,,,,open
+PostId, PostCreationDate, OwnerUserId, OwnerCreationDate, ReputationAtPostCreation,
+OwnerUndeletedAnswerCountAtPostTime, Title, BodyMarkdown, Tag1, Tag2, Tag3, Tag4, Tag5,
+PostClosedDate, OpenStatus
+
+4,07/31/2008 21:42:52,8,07/31/2008 21:33:24,1,0,Decimal vs Double?,"I'm new to C#, 
+and I want to use a trackbar for the forms opacity This is my code....<FULL TEXT>",
+c#,vb.net,timer,,,,open
+
 <and 70 million more lines>
 ```
 
-Which is then converted to look likes this:
+Which is then converted into the vowpal input format to look likes this:
 ```bash
 4 1.0 4|xsnum digit:0 istart:0 textblock:2 url:0 lines:11 tags:1 question:1 period:2 
 finalthanks:0 initcap:4 exclam:0 nonword:13 sent:4 codeblock:1 |yslen code:67 lasttext:222 
