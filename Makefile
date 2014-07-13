@@ -1,9 +1,10 @@
 # Submission for kaggle-stackoverflow challenge
 # Marco Lui, October 2012
 .PHONY: clean validate fullval
-DATADIR=/lt/work/mlui/envs/kaggle-so/data
-TRAIN=${DATADIR}/train_October_9_2012.csv
+DATADIR=data
+TRAIN=${DATADIR}/train_October_9_2012.tiny.csv
 CHECK=${DATADIR}/train-tiny.csv
+#CHECK=${DATADIR}/train.csv
 TEST=${DATADIR}/private_leaderboard.csv
 VALIDATE=${DATADIR}/train-sample_October_9_2012_v2.csv
 
@@ -32,6 +33,7 @@ check.vw: data2vw.py userdata.csv
 
 train.vw: data2vw.py check.vw userdata.csv
 	python data2vw.py $(TRAIN) train.vw
+	sed -i '$$d' train.vw
 
 test.vw: data2vw.py check.vw userdata.csv
 	python data2vw.py $(TEST) test.vw
